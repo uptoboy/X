@@ -23,7 +23,7 @@ def run():
 			print("[!] Sent!!!")
 
 def run2():
-	data = random._urandom(16)
+	data = random._urandom(696969)
 	i = random.choice(("[*]","[!]","[#]"))
 	while True:
 		try:
